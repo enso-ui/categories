@@ -1,19 +1,28 @@
 <template>
-    <div class="columns is-centered">
-        <div class="column is-half">
-            <tree class="box"
-                route-group="administration.categories"
-                editable/>
-        </div>
-    </div>
+    <enso-table class="box is-paddingless raises-on-hover"
+                id="categories"
+                :path="route('administration.categories.initTable')">
+        <template #levelOne="{ row }">
+            {{ row.recursive_parent && row.recursive_parent.recursive_parent
+        ? row.recursive_parent.recursive_parent.name : null }}
+        </template>
+        <template #levelTwo="{ row }">
+            {{ row.recursive_parent ? row.recursive_parent.name : null }}
+        </template>
+        <template #label="{ row }">
+            {{ row.label ? row.label.name : null }}
+        </template>
+    </enso-table>
 </template>
 
 <script>
-import Tree from '@enso-ui/orderable-trees/bulma';
+import { EnsoTable } from '@enso-ui/tables/bulma';
 
 export default {
     name: 'Index',
 
-    components: { Tree },
+    components: {EnsoTable},
+
+    inject: ['route'],
 };
 </script>
