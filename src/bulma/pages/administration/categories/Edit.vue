@@ -6,10 +6,18 @@
                     {{ i18n('Image') }}
                 </label>
                 <confirmation placement="bottom-end"
-                              @show="confirmation = true"
-                              @hide="confirmation = false"
-                              class="confirmation is-inline-block"
-                              v-if="canAccess('administration.categories.upload') && fileId"/>
+                    @confirm="destroy"
+                    @show="confirmation = true"
+                    @hide="confirmation = false"
+                    class="confirmation is-inline-block"
+                    v-if="canAccess('administration.categories.upload') && fileId">
+                    <a class="button is-medium is-naked"
+                       @click="confirmation = true">
+                        <span class="icon">
+                            <fa icon="trash-alt"/>
+                        </span>
+                    </a>
+                </confirmation>
             </div>
             <uploader :http="http"
                       :url="route('administration.categories.upload', $route.params)"
@@ -53,5 +61,16 @@ export default {
         fileId: null,
         confirmation: false,
     }),
+
+    methods: {
+        destroy() {
+            this.http
+            .delete(this.route('administration.categories.upload.destroy', this.$route.params))
+            .then(({ data: { message } }) => {
+                this.fileId = null;
+                this.toastr.success(message);
+            }).catch(this.errorHandler);
+        },
+    },
 };
 </script>
