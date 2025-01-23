@@ -55,7 +55,7 @@ export default {
         BaseForm, Confirmation, Fa, Uploader,
     },
 
-    inject: ['http', 'i18n', 'route', 'errorHandler', 'canAccess'],
+    inject: ['http', 'i18n', 'route', 'errorHandler', 'canAccess', 'toastr'],
 
     data: () => ({
         fileId: null,
@@ -65,7 +65,7 @@ export default {
     methods: {
         destroy() {
             this.http
-            .delete(this.route('administration.categories.upload.destroy', this.$route.params))
+            .delete(this.route('administration.categories.image.destroy', this.$route.params))
             .then(({ data: { message } }) => {
                 this.fileId = null;
                 this.toastr.success(message);
