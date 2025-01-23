@@ -1,5 +1,9 @@
 <template>
-    <base-form/>
+    <div class="columns is-centered">
+        <div class="column is-three-quarters-desktop is-full-touch">
+            <base-form/>
+        </div>
+    </div>
 </template>
 
 <script>
