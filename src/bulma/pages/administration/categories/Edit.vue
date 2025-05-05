@@ -1,8 +1,8 @@
 <template>
     <div class="category-edit columns is-centered">
         <div class="column is-three-quarters-desktop is-full-touch">
-            <base-form @ready="fileId = $event.form.field('file_id').value">
-                <template #file_id>
+            <base-form @ready="fileId = $event.form.field('image_id').value">
+                <template #image_id>
                     <div class="upload">
                         <label class="label is-inline-block">
                             {{ i18n('Image') }}
@@ -24,7 +24,7 @@
                     <uploader class="category-picture"
                         :http="http"
                         :url="route('administration.categories.upload', $route.params)"
-                        file-key="logo"
+                        file-key="image"
                         @upload-successful="fileId = $event.fileId">
                         <template #control="{ controlEvents }">
                             <figure class="image slide is-4by2"

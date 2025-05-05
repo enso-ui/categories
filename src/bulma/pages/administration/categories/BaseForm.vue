@@ -1,17 +1,17 @@
 <template>
     <enso-form class="box form-box has-background-light raises-on-hover"
-               @ready="form = $event.form">
+        @ready="form = $event.form">
         <template #levelOne="{ field }">
             <form-field :field="field"/>
         </template>
         <template #parent_id="{ field }">
             <form-field :field="field"
-                        :params="{
-                            parent_id: form.field('levelOne').value,
-                        }"/>
+                :params="{
+                    parent_id: form.field('levelOne').value,
+                }"/>
         </template>
-        <template #file_id>
-            <slot name="file_id"/>
+        <template #image_id>
+            <slot name="image_id"/>
         </template>
     </enso-form>
 </template>
