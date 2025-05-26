@@ -5,12 +5,12 @@
                 <enso-filter class="box raises-on-hover"
                     :options="levelOptions"
                     :name="i18n('Level')"
-                    v-model="filters.level"/>
+                    v-model="params.level"/>
             </div>
         </div>
         <enso-table class="box is-paddingless raises-on-hover"
                 id="categories"
-                :filters="filters"
+                :params="params"
                 :path="route('administration.categories.initTable')">
         <template #pictureUrl="{ row }">
             <figure class="image category-image is-32x32 has-vertically-centered-content">
@@ -47,7 +47,7 @@ export default {
     inject: ['route', 'i18n'],
 
     data: () => ({
-        filters: {
+        params: {
             level: null
         },
         levelOptions: [
