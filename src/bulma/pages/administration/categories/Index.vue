@@ -13,7 +13,7 @@
                 :filters="filters"
                 :path="route('administration.categories.initTable')">
         <template #pictureUrl="{ row }">
-            <figure class="image product-image is-32x32 has-vertically-centered-content">
+            <figure class="image category-image is-32x32 has-vertically-centered-content">
                 <a :href="row.pictureUrl"
                    target="_blank">
                     <img :src="row.pictureUrl"
@@ -58,7 +58,7 @@ export default {
 };
 </script>
 <style lang="scss">
-.image.product-image.is-32x32 > a img {
+.image.category-image.is-32x32 > a img {
     margin: auto;
     width: auto;
     height: auto;
