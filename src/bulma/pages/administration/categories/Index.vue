@@ -52,8 +52,18 @@ export default {
         },
         levelOptions: [
             { value: 1, label: '1', class: 'has-text-success has-text-weight-bold px-3' },
-            { value: 2, label: '2+', class: 'has-text-info has-text-weight-bold px-2' },
+            { value: 2, label: '2', class: 'has-text-info has-text-weight-bold px-2' },
         ],
     })
 };
 </script>
+<style lang="scss">
+.image.product-image.is-32x32 > a img {
+    margin: auto;
+    width: auto;
+    height: auto;
+    max-width: 32px;
+    max-height: 32px;
+}
+
+</style>
