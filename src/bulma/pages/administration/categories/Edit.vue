@@ -16,7 +16,7 @@
                         <a class="button is-medium is-naked"
                             @click="confirmation = true">
                         <span class="icon">
-                            <fa icon="trash-alt"/>
+                            <fa :icon="faTrashCan"/>
                         </span>
                             </a>
                         </confirmation>
@@ -36,7 +36,7 @@
                                 v-on="controlEvents"
                                 v-else>
                                 <span class="icon">
-                                    <fa icon="upload"/>
+                                    <fa :icon="faUpload"/>
                                 </span>
                             </button>
                         </template>
@@ -49,6 +49,7 @@
 
 <script>
 import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
+import { faTrashCan, faUpload } from '@fortawesome/free-solid-svg-icons';
 import { Uploader } from '@enso-ui/uploader/bulma';
 import Confirmation from '@enso-ui/confirmation/bulma';
 import BaseForm from './BaseForm.vue';
@@ -63,6 +64,8 @@ export default {
     inject: ['http', 'i18n', 'route', 'errorHandler', 'canAccess', 'toastr'],
 
     data: () => ({
+        faTrashCan,
+        faUpload,
         fileId: null,
         confirmation: false,
     }),

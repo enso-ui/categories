@@ -2,13 +2,13 @@
     <div>
         <div class="columns is-multiline is-centered">
             <div class="column is-narrow">
-                <enso-filter class="box raises-on-hover"
+                <enso-filter class="box"
                     :options="levelOptions"
                     :name="i18n('Level')"
                     v-model="params.level"/>
             </div>
         </div>
-        <enso-table class="box is-paddingless raises-on-hover"
+        <enso-table class="box p-0"
                 id="categories"
                 :params="params"
                 :path="route('administration.categories.initTable')">

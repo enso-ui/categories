@@ -1,5 +1,5 @@
 <template>
-    <enso-form class="box form-box has-background-light raises-on-hover"
+    <enso-form class="box form-box"
         @ready="form = $event.form">
         <template #levelOne="{ field }">
             <form-field :field="field"/>
