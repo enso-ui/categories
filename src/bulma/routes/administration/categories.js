@@ -4,7 +4,7 @@ const routes = routeImporter.fromGlob(import.meta.glob('./categories/*.js', { ea
 const RouterView = () => import('@enso-ui/ui/src/bulma/pages/Router.vue');
 
 export default {
-    path: '/categories',
+    path: 'categories',
     component: RouterView,
     meta: {
         breadcrumb: 'categories',
