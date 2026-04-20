@@ -1,7 +1,7 @@
 {
   "name": "@enso-ui/categories",
   "version": "4.3.4",
-  "description": "Basic categories package",
+  "description": "Categories administration pages for Enso UI.",
   "main": "src/bulma/pages/administration/categories/Index.vue",
   "repository": {
     "type": "git",
