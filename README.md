@@ -26,20 +26,16 @@ This package is also available through the full `enso-ui` workspace bundle.
 ## Features
 
 - exports the categories index page used by the administration router
+- ships the route modules for category listing, creation, and edit flows
 - combines Enso table slots with a dedicated level filter
 - renders picture previews and flattened parent labels through table slots
-- ships the page and route modules required by the matching backend package
 
 ## Usage
 
-```vue
-<script>
+```js
 import CategoriesIndex from '@enso-ui/categories';
-
-export default {
-    components: { CategoriesIndex },
-};
-</script>
+import CategoryCreate from '@enso-ui/categories/src/bulma/pages/administration/categories/Create.vue';
+import CategoryEdit from '@enso-ui/categories/src/bulma/pages/administration/categories/Edit.vue';
 ```
 
 ## API
@@ -56,8 +52,39 @@ Props:
 Events:
 - No public emits.
 
-Methods:
-- Table behaviour is configured through slots and injected route/i18n helpers.
+### `Create`
+
+Create page for a category record.
+
+Import: `@enso-ui/categories/src/bulma/pages/administration/categories/Create.vue`
+
+### `Edit`
+
+Edit page for an existing category record.
+
+Import: `@enso-ui/categories/src/bulma/pages/administration/categories/Edit.vue`
+
+## Routes
+
+### `administration/categories`
+
+Route group:
+- `administration.categories.index`
+- `administration.categories.create`
+- `administration.categories.edit`
+
+Pages:
+- `src/bulma/pages/administration/categories/Index.vue`
+- `src/bulma/pages/administration/categories/Create.vue`
+- `src/bulma/pages/administration/categories/Edit.vue`
+
+The package ships a nested administration route group that exposes the full list/create/edit workflow for categories.
+
+## Companion Backend Package
+
+- [`laravel-enso/categories`](https://docs.laravel-enso.com/backend/categories.html) [↗](https://github.com/laravel-enso/categories)
+
+The backend companion provides the category table definition, form contracts, image handling, and CRUD endpoints used by these pages.
 
 ## Depends On
 
